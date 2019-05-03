@@ -153,11 +153,7 @@ namespace TrashCollector.Controllers
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
-                var customer = new Customer();
-                customer.FirstName = model.FirstName;
-                customer.LastName = model.LastName;
-                customer.Address = model.Address;
-                customer.Zipcode = model.Zipcode;
+                // if customer else if employee
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
