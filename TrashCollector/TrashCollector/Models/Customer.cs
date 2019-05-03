@@ -7,7 +7,7 @@ using System.Web;
 
 namespace TrashCollector.Models
 {
-    public class CustomerModel
+    public class Customer
     {
         [Key]
         public int Id { get; set; }
