@@ -175,9 +175,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905051956436_remove ApplicationId from Create Employee.cs" />
-    <Compile Include="Migrations\201905051956436_remove ApplicationId from Create Employee.Designer.cs">
-      <DependentUpon>201905051956436_remove ApplicationId from Create Employee.cs</DependentUpon>
+    <Compile Include="Migrations\201905052023457_delete Address and Zipcode from Employee register view.cs" />
+    <Compile Include="Migrations\201905052023457_delete Address and Zipcode from Employee register view.Designer.cs">
+      <DependentUpon>201905052023457_delete Address and Zipcode from Employee register view.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -246,6 +246,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Employee\Create.cshtml" />
     <Content Include="Views\Customer\Create.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -264,8 +265,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905051956436_remove ApplicationId from Create Employee.resx">
-      <DependentUpon>201905051956436_remove ApplicationId from Create Employee.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905052023457_delete Address and Zipcode from Employee register view.resx">
+      <DependentUpon>201905052023457_delete Address and Zipcode from Employee register view.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

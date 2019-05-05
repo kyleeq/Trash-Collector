@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Microsoft.AspNet.Identity;
+@{
     if (this.User.IsInRole("Customer"))
     {
         Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
