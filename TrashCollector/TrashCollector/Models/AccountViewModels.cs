@@ -65,20 +65,8 @@ namespace TrashCollector.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "First Name")]
-        public string FirstName { get; set; }
-
-        [Required]
-        [Display(Name = "Last Name")]
-        public string LastName { get; set; }
-
-        [Required]
-        [Display(Name = "Address")]
-        public string Address { get; set; }
-
-        [Required]
-        [Display(Name = "Zipcode")]
-        public int Zipcode { get; set; }
+        [Display(Name = "UserRoles")]
+        public string UserRoles { get; set; }
 
         [Required]
         [EmailAddress]
