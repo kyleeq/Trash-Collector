@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TrashCollector.Models;
+using Microsoft.AspNet.Identity;
 
 namespace TrashCollector.Controllers
 {
@@ -41,6 +42,7 @@ namespace TrashCollector.Controllers
             try
             {
                 // TODO: Add insert logic here
+                customer.ApplicationId = User.Identity.GetUserId();
                 db.Customers.Add(customer);
                 db.SaveChanges();
                 return RedirectToAction("Index");

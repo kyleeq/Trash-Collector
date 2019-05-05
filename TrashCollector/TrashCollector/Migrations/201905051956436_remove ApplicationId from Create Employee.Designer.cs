@@ -7,13 +7,13 @@ namespace TrashCollector.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class dropaddressinEmployee : IMigrationMetadata
+    public sealed partial class removeApplicationIdfromCreateEmployee : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(dropaddressinEmployee));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(removeApplicationIdfromCreateEmployee));
         
         string IMigrationMetadata.Id
         {
-            get { return "201905050613096_drop address in Employee"; }
+            get { return "201905051956436_remove ApplicationId from Create Employee"; }
         }
         
         string IMigrationMetadata.Source

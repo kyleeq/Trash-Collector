@@ -22,7 +22,7 @@ namespace TrashCollector.Models
         public string Email { get; set; }
 
         [Display(Name = "Zipcode")]
-        public int Zipcode { get; set; }
+        public string Zipcode { get; set; }
 
         [ForeignKey("ApplicationUser")]
         public string ApplicationId { get; set; }

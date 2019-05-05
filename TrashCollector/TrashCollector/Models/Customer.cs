@@ -25,7 +25,7 @@ namespace TrashCollector.Models
         public string Address { get; set; }
 
         [Display(Name = "Zipcode")]
-        public int Zipcode { get; set; }
+        public string Zipcode { get; set; }
 
         [Display(Name = "Bill")]
         public double Bill { get; set; }
