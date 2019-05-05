@@ -19,12 +19,16 @@ namespace TrashCollector.Controllers
         // GET: Employee
         public ActionResult Index()
         {
-            return View();
+            string userId = User.Identity.GetUserId();
+            var employee = db.Employees.Where(e => e.ApplicationId == userId).FirstOrDefault();
+            List<Customer> pickups = db.Customers.Where(c => c.Zipcode == employee.Zipcode).ToList();
+            return View(pickups);
         }
 
         // GET: Employee/Details/5
         public ActionResult Details(int id)
         {
+
             return View();
         }
 
