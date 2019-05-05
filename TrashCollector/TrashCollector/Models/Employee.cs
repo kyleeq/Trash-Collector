@@ -21,9 +21,6 @@ namespace TrashCollector.Models
         [Display(Name = "Email Address")]
         public string Email { get; set; }
 
-        [Display(Name = "Address")]
-        public string Address { get; set; }
-
         [Display(Name = "Zipcode")]
         public int Zipcode { get; set; }
 
