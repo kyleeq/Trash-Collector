@@ -2,11 +2,11 @@
 @{
     if (this.User.IsInRole("Customer"))
     {
-        Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+        Layout = "~/Views/Shared/_CustomerLayout.cshtml";
     }
     else if (this.User.IsInRole("Employee"))
     {
-        Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+        Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
     }
     else
     {

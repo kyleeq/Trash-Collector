@@ -18,9 +18,11 @@ namespace TrashCollector.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext db;
 
         public AccountController()
         {
+            db = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -80,7 +82,20 @@ namespace TrashCollector.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    var person = db.Users.Where(u => u.Email == model.Email).FirstOrDefault();
+
+                    if (person.UserRole == "Customer")
+                    {
+                        return RedirectToAction("Index", "Customer");
+                    }
+                    else if (person.UserRole == "Employee")
+                    {
+                        return RedirectToAction("Index", "Employee");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -152,7 +167,7 @@ namespace TrashCollector.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, UserRole = model.UserRoles };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 // if customer else if employee
                 if (result.Succeeded)

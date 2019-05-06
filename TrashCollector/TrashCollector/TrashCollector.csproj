@@ -179,6 +179,10 @@
     <Compile Include="Migrations\201905052023457_delete Address and Zipcode from Employee register view.Designer.cs">
       <DependentUpon>201905052023457_delete Address and Zipcode from Employee register view.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905060003277_addUserRole.cs" />
+    <Compile Include="Migrations\201905060003277_addUserRole.Designer.cs">
+      <DependentUpon>201905060003277_addUserRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -248,6 +252,8 @@
     <Content Include="Views\Customer\Create.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Shared\_EmployeeLayout.cshtml" />
+    <Content Include="Views\Shared\_CustomerLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -268,6 +274,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201905052023457_delete Address and Zipcode from Employee register view.resx">
       <DependentUpon>201905052023457_delete Address and Zipcode from Employee register view.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905060003277_addUserRole.resx">
+      <DependentUpon>201905060003277_addUserRole.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
