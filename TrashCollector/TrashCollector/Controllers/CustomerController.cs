@@ -74,7 +74,7 @@ namespace TrashCollector.Controllers
                 edittedCustomer.LastName = customer.LastName;
                 edittedCustomer.Address = customer.Address;
                 edittedCustomer.Zipcode = customer.Zipcode;
-                //edittedCustomer.PickupDay = customer.ExtraPickupDay;
+                edittedCustomer.PickupDay = customer.PickupDay;
                 edittedCustomer.ExtraPickupDay = customer.ExtraPickupDay;
                 edittedCustomer.SuspendStartDay = customer.SuspendStartDay;
                 edittedCustomer.SuspendEndDay = customer.SuspendEndDay;
