@@ -39,7 +39,7 @@ namespace TrashCollector.Models
         [Display(Name = "First Day of Suspended Period")]
         public DateTime? SuspendStartDay { get; set; }
 
-        [Display(Name = "Second Day of Suspended Period")]
+        [Display(Name = "Last Day of Suspended Period")]
         public DateTime? SuspendEndDay { get; set; } 
 
         [Display(Name = "Pickup Status")]
