@@ -31,16 +31,16 @@ namespace TrashCollector.Models
         public double Bill { get; set; }
 
         [Display(Name = "Pickup Day of the Week")]
-        public DayOfWeek PickupDay { get; set; }
+        public string PickupDay { get; set; }
 
         [Display(Name = "One time extra pickup day")]
-        public DateTime extraPickupDay { get; set; }
+        public DateTime extraPickupDay { get; set; } = DateTime.Now;
 
         [Display(Name = "First Day of Suspended Period")]
-        public DateTime SuspendStartDay { get; set; }
+        public DateTime SuspendStartDay { get; set; } = DateTime.Now;
 
         [Display(Name = "Second Day of Suspended Period")]
-        public DateTime SuspendEndDay { get; set; }
+        public DateTime SuspendEndDay { get; set; } = DateTime.Now;
 
         [Display(Name = "Pickup Status")]
         public bool PickupStatus { get; set; } = false;
