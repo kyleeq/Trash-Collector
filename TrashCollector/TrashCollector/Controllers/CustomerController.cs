@@ -19,7 +19,9 @@ namespace TrashCollector.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            return View();
+            var customerId = User.Identity.GetUserId();
+            var customer = db.Customers.Where(c => c.ApplicationId == customerId).FirstOrDefault();
+            return View(customer);
         }
 
         // GET: Customer/Details/5

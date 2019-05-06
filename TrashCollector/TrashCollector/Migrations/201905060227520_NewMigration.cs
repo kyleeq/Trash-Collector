@@ -3,7 +3,7 @@ namespace TrashCollector.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class thiswilldoit : DbMigration
+    public partial class NewMigration : DbMigration
     {
         public override void Up()
         {
@@ -19,9 +19,9 @@ namespace TrashCollector.Migrations
                         Zipcode = c.String(),
                         Bill = c.Double(nullable: false),
                         PickupDay = c.String(),
-                        extraPickupDay = c.DateTime(nullable: false),
-                        SuspendStartDay = c.DateTime(nullable: false),
-                        SuspendEndDay = c.DateTime(nullable: false),
+                        ExtraPickupDay = c.DateTime(),
+                        SuspendStartDay = c.DateTime(),
+                        SuspendEndDay = c.DateTime(),
                         PickupStatus = c.Boolean(nullable: false),
                         ApplicationId = c.String(maxLength: 128),
                     })

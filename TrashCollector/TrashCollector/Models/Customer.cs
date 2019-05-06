@@ -34,7 +34,7 @@ namespace TrashCollector.Models
         public string PickupDay { get; set; }
 
         [Display(Name = "One time extra pickup day")]
-        public DateTime? extraPickupDay { get; set; }
+        public DateTime? ExtraPickupDay { get; set; }
 
         [Display(Name = "First Day of Suspended Period")]
         public DateTime? SuspendStartDay { get; set; }
