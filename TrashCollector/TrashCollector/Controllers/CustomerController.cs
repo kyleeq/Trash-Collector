@@ -65,12 +65,20 @@ namespace TrashCollector.Controllers
 
         // POST: Customer/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Customer customer)
         {
             try
             {
-                // TODO: Add update logic here
-
+                var edittedCustomer = db.Customers.Where(c => c.Id == customer.Id).FirstOrDefault();
+                edittedCustomer.FirstName = customer.FirstName;
+                edittedCustomer.LastName = customer.LastName;
+                edittedCustomer.Address = customer.Address;
+                edittedCustomer.Zipcode = customer.Zipcode;
+                //edittedCustomer.PickupDay = customer.ExtraPickupDay;
+                edittedCustomer.ExtraPickupDay = customer.ExtraPickupDay;
+                edittedCustomer.SuspendStartDay = customer.SuspendStartDay;
+                edittedCustomer.SuspendEndDay = customer.SuspendEndDay;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
