@@ -20,7 +20,7 @@ namespace TrashCollector.Models
 
         [Display(Name = "Email Address")]
         public string Email { get; set; }
-
+        
         [Display(Name = "Zipcode")]
         public string Zipcode { get; set; }
 

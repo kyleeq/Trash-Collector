@@ -56,9 +56,11 @@ namespace TrashCollector.Controllers
         }
 
         // GET: Customer/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int Id)
         {
-            return View();
+            var customerId = User.Identity.GetUserId();
+            var customerPickupInfo = db.Customers.Where(c => c.ApplicationId == customerId).FirstOrDefault();
+            return View(customerPickupInfo);
         }
 
         // POST: Customer/Edit/5
