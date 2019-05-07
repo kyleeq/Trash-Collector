@@ -43,7 +43,8 @@ namespace TrashCollector.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+                var userId = User.Identity.GetUserId();
+                customer.Email = db.Users.Where(u => u.Id == userId).Select(u => u.Email).FirstOrDefault();
                 customer.ApplicationId = User.Identity.GetUserId();
                 db.Customers.Add(customer);
                 db.SaveChanges();
