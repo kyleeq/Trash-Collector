@@ -35,15 +35,9 @@
             @Html.DisplayFor(model => model.Address)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
     </dl>
 </div>
+<br/>
 <div>
     <h3>Pickups</h3>
     <dl class="dl-horizontal">
@@ -74,9 +68,9 @@
             @Html.DisplayNameFor(model => model.SuspendEndDay)
         </dt>
 
-        <dt>
+        <dd>
             @Html.DisplayFor(model => model.SuspendEndDay)
-        </dt>
+        </dd>
 
         <dt>
             @Html.ActionLink("Edit", "Edit", new { Id = Model.Id });
