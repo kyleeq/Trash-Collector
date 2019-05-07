@@ -23,7 +23,7 @@ namespace TrashCollector.Controllers
             var employee = db.Employees.Where(e => e.ApplicationId == userId).FirstOrDefault();
             var pickups = db.Customers.Where(c => c.Zipcode == employee.Zipcode).ToList();
             List<Customer> pickupsToday = pickups.Where(p => p.PickupDay == DateTime.Now.DayOfWeek.ToString()).ToList();
-            return View(pickups);
+            return View(pickupsToday);
         }
 
         // GET: Employee/Details/5
@@ -46,7 +46,8 @@ namespace TrashCollector.Controllers
         {            
             try
             {
-                // TODO: Add insert logic here
+                var userId = User.Identity.GetUserId();
+                employee.Email = db.Users.Where(u => u.Id == userId).Select(u => u.Email).FirstOrDefault();
                 employee.ApplicationId = User.Identity.GetUserId();
                 db.Employees.Add(employee);
                 db.SaveChanges();
