@@ -21,10 +21,15 @@ namespace TrashCollector.Controllers
         {
             string userId = User.Identity.GetUserId();
             var employee = db.Employees.Where(e => e.ApplicationId == userId).FirstOrDefault();
-            var pickups = db.Customers.Where(c => c.Zipcode == employee.Zipcode).ToList();
+            var pickups = db.Customers.Where(c => c.Zipcode == employee.Zipcode && c.PickupStatus == false).ToList();
             List<Customer> pickupsToday = pickups.Where(p => p.PickupDay == DateTime.Now.DayOfWeek.ToString()).ToList();
             return View(pickupsToday);
         }
+        //[HttpPost]
+        //public ActionResult Index(List<Customer> customers)
+        //{
+
+        //}
 
         // GET: Employee/Details/5
         public ActionResult Details(int id)
@@ -82,25 +87,15 @@ namespace TrashCollector.Controllers
         }
 
         // GET: Employee/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult CompletePickup(int id)
         {
-            return View();
+            var currentCustomer = db.Customers.Where(c => c.Id == id).FirstOrDefault();
+            currentCustomer.PickupStatus = true;
+            currentCustomer.Bill += 25;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
-        // POST: Employee/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        
     }
 }
